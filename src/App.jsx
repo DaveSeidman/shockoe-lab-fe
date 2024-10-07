@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { io } from 'socket.io-client'; // Import the Socket.IO client
 import Entries from './views/entries';
 import AdminView from './views/admin';
+import { apiUrls } from './config.json';
 import './index.scss';
+
+const env = location.hostname === 'localhost' ? 'local' : 'staging'
+
 
 export default function App() {
   const [entries, setEntries] = useState([]);
@@ -14,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     // Fetch the initial data from the backend API
-    fetch('/api/data').then((res) => res.json()).then(({ entries, tags, types, themes }) => {
+    fetch(`${apiUrls[env]}/api/data`).then((res) => res.json()).then(({ entries, tags, types, themes }) => {
       setEntries(entries);
       setTags(tags);
       setTypes(types);
@@ -22,7 +26,7 @@ export default function App() {
     });
 
     // Initialize the socket connection to the backend server
-    const socket = io('http://localhost:8000'); // Connect to the backend's Socket.IO server
+    const socket = io(apiUrls[env]); // Connect to the backend's Socket.IO server
 
     socket.on('themeId', (data) => {
       console.log(themes, data);
@@ -36,7 +40,7 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route
           path="/entries"

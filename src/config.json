@@ -1,3 +1,7 @@
 {
-  "s3Bucket": "https://shockoe-lab-assets.s3.amazonaws.com"
+  "s3Bucket": "https://shockoe-lab-assets.s3.amazonaws.com",
+  "apiUrls": {
+    "local": "http://localhost:8000",
+    "staging": "https://mmf7ybirjy.us-east-1.awsapprunner.com"
+  }
 }
