@@ -17,6 +17,12 @@
 
       &.header {
         font-weight: bold;
+        position: fixed;
+        background: white;
+      }
+
+      &:nth-child(2) {
+        margin-top: 3rem;
       }
 
       &:nth-child(2n) {
@@ -44,8 +50,9 @@
         }
 
         &:nth-child(4) {
-          width: 400px;
+          width: calc(100vw - 960px);
           overflow-x: scroll;
+          height: 3rem;
         }
 
         &:first-child {

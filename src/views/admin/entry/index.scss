@@ -67,10 +67,11 @@
 }
 
 .tags-list > div {
-  margin: .5rem 1rem;
+  margin: .5rem;
   padding: .5rem;
   background: orange;
   white-space: nowrap;
+  border-radius: .5rem;
 
 
   input[type="checkbox"] {
