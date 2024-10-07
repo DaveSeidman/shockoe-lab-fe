@@ -11,6 +11,77 @@ html, body, #root {
   src: url('assets/fonts/apercu.ttf');
 }
 
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-Light.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-LightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-BoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-Super.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('assets/fonts/GTSuperDisplay-SuperItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 $orange: #ff7c32;
 $beige1: #c2bea3;
 $beige2: #dfdccd;
