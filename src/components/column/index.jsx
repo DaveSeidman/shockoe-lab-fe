@@ -113,7 +113,7 @@ export default function Column({ column, columnIndex, openEntry, highlights }) {
             <div>
               <h1>{entry.summary}</h1>
               {entry.image && <img src={entry.image.file} />}
-              {/* {entry.video && <video muted playsInline><source src={entry.video} /></video>} */}
+              {entry.video.file && <video muted playsInline><source src={entry.video.file} /></video>}
             </div>
           </div>
         ))}
