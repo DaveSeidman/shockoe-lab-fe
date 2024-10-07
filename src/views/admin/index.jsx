@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './index.scss';
 import EditEntryOverlay from './entry';
+import { apiUrls } from '../../config.json';
+
 
 export default function Admin() {
   const [tags, setTags] = useState([]);
@@ -9,13 +11,16 @@ export default function Admin() {
   const [entries, setEntries] = useState([]);
   const [editingEntry, setEditingEntry] = useState(null);
 
+  const env = location.hostname === 'localhost' ? 'local' : 'staging'
+
+
   useEffect(() => {
     async function fetchData() {
       try {
         // TODO: use a getAllData route here to save traffic
-        setEntries(await (await fetch(`${location.origin}/api/entries`)).json());
-        setTags(await (await fetch(`${location.origin}/api/tags`)).json());
-        setTypes(await (await fetch(`${location.origin}/api/types`)).json());
+        setEntries(await (await fetch(`${apiUrls[env]}/api/entries`)).json());
+        setTags(await (await fetch(`${apiUrls[env]}/api/tags`)).json());
+        setTypes(await (await fetch(`${apiUrls[env]}/api/types`)).json());
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -29,17 +34,17 @@ export default function Admin() {
   };
 
   const handleDeleteClick = async (entry) => {
-    const response = await fetch(`${location.origin}/api/entries/${entry._id}`, {
+    const response = await fetch(`${apiUrls[env]}/api/entries/${entry._id}`, {
       method: 'DELETE',
     });
 
-    setEntries(await (await fetch(`${location.origin}/api/entries`)).json());
+    setEntries(await (await fetch(`${apiUrls[env]}/api/entries`)).json());
   };
 
   const handleSave = async (entryId, updatedData) => {
     console.log({ updatedData });
     try {
-      const response = await fetch(`${location.origin}/api/entries/${entryId}`, {
+      const response = await fetch(`${apiUrls[env]}/api/entries/${entryId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedData),
@@ -49,7 +54,7 @@ export default function Admin() {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      setEntries(await (await fetch(`${location.origin}/api/entries`)).json());
+      setEntries(await (await fetch(`${apiUrls[env]}/api/entries`)).json());
       setEditingEntry(false);
     } catch (error) {
       console.error('Error updating entry:', error);
@@ -57,7 +62,7 @@ export default function Admin() {
   };
 
   const addNew = async (type) => {
-    const success = await fetch(`${location.origin}/api/entries`, {
+    const success = await fetch(`${apiUrls[env]}/api/entries`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +70,7 @@ export default function Admin() {
       body: JSON.stringify({ type }),
     });
 
-    setEntries(await (await fetch(`${location.origin}/api/entries`)).json());
+    setEntries(await (await fetch(`${apiUrls[env]}/api/entries`)).json());
   };
 
   return (

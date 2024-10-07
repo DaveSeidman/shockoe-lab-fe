@@ -6,15 +6,14 @@ import AdminView from './views/admin';
 import { apiUrls } from './config.json';
 import './index.scss';
 
-const env = location.hostname === 'localhost' ? 'local' : 'staging'
-
-
 export default function App() {
   const [entries, setEntries] = useState([]);
   const [tags, setTags] = useState([]);
   const [types, setTypes] = useState([]);
   const [themes, setThemes] = useState([]);
   const [theme, setTheme] = useState(null); // State to store received RFID data
+
+  const env = location.hostname === 'localhost' ? 'local' : 'staging'
 
   useEffect(() => {
     // Fetch the initial data from the backend API
