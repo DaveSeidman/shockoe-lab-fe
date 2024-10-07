@@ -1,3 +1,9 @@
-video {
-  // max-height: 10rem;
+.admin {
+  & .video-entry {
+    height: unset !important;
+
+    video {
+      max-height: 12rem;
+    }
+  }
 }

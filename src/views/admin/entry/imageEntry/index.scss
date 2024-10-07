@@ -1,3 +1,6 @@
-.image-entry {
-  // height: unset !important;
+.admin {
+  & .image-entry {
+    height: unset !important;
+  }
 }
+

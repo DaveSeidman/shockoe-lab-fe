@@ -71,7 +71,7 @@ export default function Admin() {
   return (
     <div className="admin">
       <div className="table">
-        <div className="table-row">
+        <div className="table-row header">
           <div className="table-row-column">Title</div>
           <div className="table-row-column">Summary</div>
           <div className="table-row-column">Type</div>
@@ -80,7 +80,7 @@ export default function Admin() {
         </div>
         {entries.map((entry) => (
           <div className="table-row" key={entry._id}>
-            <div className="table-row-column">{entry.title}</div>
+            <div className="table-row-column"><a href={`${import.meta.env.BASE_URL}entries/${entry._id}`} target="_blank" rel="noreferrer">{entry.title}</a></div>
             <div className="table-row-column">{entry.summary}</div>
             <div className="table-row-column"><span className="type">{entry.type.name}</span></div>
             <div className="table-row-column taglist">{entry.tags.map((tag) => (<span key={tag._id} className="tag">{tag.name}</span>))}</div>
