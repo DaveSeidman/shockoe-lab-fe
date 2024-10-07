@@ -76,6 +76,18 @@
   input[type="checkbox"] {
     margin: .5rem;
   }
+
+}
+
+.tag {
+  background: orange;
+  color: white;
+  padding: 0 .5rem;
+  margin: .5rem;
+  display: inline-block;
+  font-size: .75rem;
+  white-space: nowrap;
+  border-radius: .5rem;
 }
 
 #root {

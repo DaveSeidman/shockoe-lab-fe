@@ -1,7 +1,9 @@
-.text-entry {
-
-  &  > textarea {
-    font-size: 1rem;
-    height: 10rem;
+.admin {
+  & .text-entry {
+    height: unset !important;
+    & > textarea {
+      font-size: 1rem;
+      height: 10rem;
+    }
   }
 }
