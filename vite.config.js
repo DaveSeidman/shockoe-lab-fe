@@ -2,9 +2,6 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  build: {
-    outDir: 'docs', // or any folder you want GitHub Pages to serve from
-  },
   plugins: [
     react(),
   ],
