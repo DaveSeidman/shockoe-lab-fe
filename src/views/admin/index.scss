@@ -2,7 +2,7 @@
   .table {
     width: 100%;
     height: calc(100% - 4rem);
-    overflow: scroll;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -14,11 +14,12 @@
       flex-direction: row;
       flex-wrap: nowrap;
       width: min-content;
-
+  
       &.header {
         font-weight: bold;
         position: fixed;
         background: white;
+        width: 100%;
       }
 
       &:nth-child(2) {
@@ -50,7 +51,7 @@
         }
 
         &:nth-child(4) {
-          width: calc(100vw - 960px);
+          width: calc(100vw - 980px);
           overflow-x: scroll;
           height: 3rem;
         }

@@ -20,7 +20,7 @@
       column-width: calc(50vw - 20rem);
       column-gap: 5rem;
       height: 100%;
-      white-space: wrap;
+      white-space: pre-wrap;
       font-size: 2rem;
       padding-left: 5rem;
       font-family: 'GT Super Display';
@@ -28,7 +28,6 @@
       transition: transform 1s;
     }
     &-controls {
-      pointer-events: all;
       position: absolute;   
       inset: 0;
       width: 100%;
@@ -36,6 +35,7 @@
       outline: 2px solid green;
 
       &-prev, &-next {
+        pointer-events: all;
         position: absolute;
         top: 50%;
         width: 3rem;
@@ -46,7 +46,7 @@
         left: 0;
       }
       &-next {
-right: 0;
+        right: 0;
       }
      }
    
