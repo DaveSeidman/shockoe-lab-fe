@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Markdown from 'react-markdown';
+// import Markdown from 'react-markdown';
 import './index.scss';
 
 export default function TextEntry({ entry }) {
@@ -49,7 +49,7 @@ export default function TextEntry({ entry }) {
           </button>
           <button
             type="button"
-            className={`text-entry-main-controls-next ${page >= pages ? 'hidden' : ''}`}
+            className={`text-entry-main-controls-next ${page >= pages - 1 ? 'hidden' : ''}`}
             onClick={() => { setPage(page + 1); }}
           >
             →
